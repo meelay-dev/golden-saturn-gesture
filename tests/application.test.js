@@ -59,13 +59,13 @@ function harness() {
     updateResolution(state) {
       this.resolution = state;
     },
-    faceStatus() {},
-    hideNotice() {},
-    clearLandmarks() {},
-    setDelegate() {},
-    resizeLandmarks() {},
-    drawLandmarks() {},
-    dispose() {},
+    faceStatus() { },
+    hideNotice() { },
+    clearLandmarks() { },
+    setDelegate() { },
+    resizeLandmarks() { },
+    drawLandmarks() { },
+    dispose() { },
   };
   const camera = {
     dimensions: { width: 640, height: 480 },
@@ -81,20 +81,20 @@ function harness() {
     detect: () => null,
   };
   const face = {
-    stop() {},
-    start() {},
-    resize() {},
-    invalidateProjection() {},
-    update() {},
-    dispose() {},
+    stop() { },
+    start() { },
+    resize() { },
+    invalidateProjection() { },
+    update() { },
+    dispose() { },
   };
   const renderer = {
     quality: "medium",
     disposed: false,
-    resize() {},
-    clearBurst() {},
-    render() {},
-    triggerBurst() {},
+    resize() { },
+    clearBurst() { },
+    render() { },
+    triggerBurst() { },
     setQuality(quality) {
       this.quality = quality;
     },
@@ -107,7 +107,7 @@ function harness() {
       this.requests = (this.requests ?? 0) + 1;
       return this.requests;
     },
-    cancel() {},
+    cancel() { },
     isVisible: () => true,
   };
   const dependencies = {
@@ -261,7 +261,7 @@ test("stopping while the optional face renderer loads prevents GPU allocation", 
     modelStarts = 0;
   const pipeline = new FacePipeline({
     vision: {
-      stop() {},
+      stop() { },
       async start() {
         modelStarts++;
         return true;
@@ -305,8 +305,8 @@ test("face scheduling yields to hand inference but expires stale face geometry",
   const pipeline = new FacePipeline({
     vision,
     loadRenderer: async () => () => ({
-      resize() {},
-      hide() {},
+      resize() { },
+      hide() { },
       render(face) {
         rendered.push(face);
       },
